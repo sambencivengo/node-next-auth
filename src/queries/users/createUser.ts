@@ -1,23 +1,18 @@
-import { DefaultViewBuilderCore } from "drizzle-orm/pg-core";
+import { db } from "../../db";
 import { user } from "../../db/schema";
 
-const newUser: typeof user.$inferInsert = {
-	username: 'John',
-	age: 30,
-	email: 'john@example.com',
+export const createUser = async ({ }) => {
+	try {
+		const newUser: typeof user.$inferInsert = {
+			username: 'John',
+			age: 30,
+			email: 'john@example.com',
+		};
+		await db.insert(user).values(newUser);
+	} catch (error: any) {
+		return { error, message: "Unable to create new user" }
+	}
 };
 
-await db.insert(user).values(newUser);
-console.log('New user created!')
 
-const users = await DefaultViewBuilderCore.select().from(user);
-
-console.log('Getting all users from the database: ', users)
-await db
-	.update(user)
-	.set({
-		age: 31,
-	})
-	.where(eq(user.email, user.email));
-console.log('User info updated!')
 
