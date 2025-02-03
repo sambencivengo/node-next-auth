@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tsx src/index.ts"
+    "migrate":"npx drizzle-kit migrate",
+    "migration.create": "npx drizzle-kit generate",
+    "dev": "pnpm tsx src/index.ts"
   },
   "type": "module",
   "keywords": [],
