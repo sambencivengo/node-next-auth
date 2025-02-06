@@ -8,6 +8,13 @@
       "when": 1738553076843,
       "tag": "0000_redundant_nomad",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1738593939449,
+      "tag": "0001_talented_sauron",
+      "breakpoints": true
     }
   ]
 }
