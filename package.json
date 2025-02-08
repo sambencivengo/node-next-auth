@@ -7,17 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "npx drizzle-kit migrate",
     "migration.create": "npx drizzle-kit generate",
-    "dev": "pnpm tsx src/index.ts"
+    "dev": "pnpm tsx --watch src/index.ts"
   },
   "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@trpc/server": "11.0.0-rc.748",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.39.1",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.9",
     "pg": "^8.13.1"
   },
   "devDependencies": {
