@@ -2,24 +2,24 @@ import { db } from "src/db";
 import { users } from "src/db/schema";
 
 
-export const createUser = async () => {
+interface CreateUserArgs {
+  id: number,
+  username: string,
+  age: number,
+  email: string
+}
+
+export const createUser = async ({ id, age, username, email }: CreateUserArgs) => {
   try {
-    console.log("Creating user")
     const newUser: typeof users.$inferInsert = {
-      username: 'John',
-      age: 30,
-      email: 'john@example.com',
+      id,
+      username,
+      age,
+      email,
     };
-    try {
+    const result = await db.insert(users).values(newUser);
 
-    } catch (error) {
-
-    }
-    const val = await db.insert(users).values(newUser);
-
-    console.log("User created!!!!!", { newUser })
-    console.log(val)
-    return { user: newUser };
+    return { data: result };
   } catch (error: any) {
     return { error, message: "Unable to create new user" }
   }
