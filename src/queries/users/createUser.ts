@@ -2,8 +2,8 @@ import { db } from "src/db";
 import { users } from "src/db/schema";
 
 
-interface CreateUserArgs {
-  id: number,
+export interface CreateUserArgs {
+  id?: number,
   username: string,
   age: number,
   email: string
