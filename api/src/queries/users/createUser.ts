@@ -24,5 +24,3 @@ export const createUser = async ({ id, age, username, email }: CreateUserArgs) =
     return { error, message: "Unable to create new user" }
   }
 }
-
-

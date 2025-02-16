@@ -1,4 +1,3 @@
-import Express, { Response } from 'express';
 import 'dotenv/config';
 import Express, { Response } from 'express';
 import { createUser, CreateUserArgs } from './queries/users/createUser';
